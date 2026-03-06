@@ -1,8 +1,6 @@
 from django.db import models
 from exemplo.models import BaseModel
 
-from django.db import models
-
 class Compra(BaseModel):
     data = models.DateField() 
     hora = models.TimeField() 

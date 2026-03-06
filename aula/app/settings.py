@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'aula',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'Lwop76@m',
+        'PASSWORD': 'root',
         'PORT': '3306',
     }
 }
