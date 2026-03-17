@@ -5,3 +5,6 @@ from .reporter import *
 from .artigo import *
 from .revista import *
 from .reportagem import *
+from .disciplina import *
+from .aluno import *
+from .matricula import *
