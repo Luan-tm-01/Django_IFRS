@@ -21,3 +21,6 @@ class Reportagem(BaseModel):
     
     class Meta:
         verbose_name_plural = "Reportagens"
+
+    def __str__(self):
+        return f'{self.titulo}'

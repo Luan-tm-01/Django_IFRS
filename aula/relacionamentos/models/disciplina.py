@@ -16,3 +16,6 @@ class Disciplina(BaseModel):
                                    help_text="Semestre da Disciplina")
     
     ementa = models.TextField(help_text="Ementa da Disciplina")
+
+    def __str__(self):
+        return f'{self.nome}'

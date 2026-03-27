@@ -40,3 +40,6 @@ class Passaporte(BaseModel):
             raise ValidationError({
                 "emissao": "Data de emissão não pode ser anterior ao nascimento do titular"
             })
+        
+    def __str__(self):
+        return f'{self.numero} - {self.pessoa}'
