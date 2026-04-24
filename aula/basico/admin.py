@@ -1,3 +1,4 @@
 from django.contrib import admin
+from basico.models import Competidor
 
-# Register your models here.
+admin.site.register(Competidor)

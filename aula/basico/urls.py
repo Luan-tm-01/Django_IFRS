@@ -1,6 +1,7 @@
-from basico.views import PrimeiraView, SaudacaoView, SaudacaoNomeView, AlterarSenhaView, OperacaoCalculoView
-from django.urls import path, include
+from basico.views import PrimeiraView, SaudacaoView, SaudacaoNomeView, AlterarSenhaView, OperacaoCalculoView, CompetidorRead
+from django.urls import path
 import basico.views.funcoes as views
+from basico.views import read_competidor, list_competidores
 
 
 app_name = "basico"
@@ -16,4 +17,7 @@ urlpatterns = [
     path("classe/saudacao_nome/<str:nome>", SaudacaoNomeView.as_view(), name="saudacao_nome"),
     path("classe/alterar_senha/<str:senha>", AlterarSenhaView.as_view(), name="alterar_senha"),
     path("classe/<str:operacao>/<int:valor1>/<int:valor2>", OperacaoCalculoView.as_view()),
+    path("competidor/funcao/<int:id>", read_competidor, name="read_competidor"),
+    path("competidor/classe/<int:id>", CompetidorRead.as_view(), name="classe_competidor_read"),
+    path("competidor/funcao", list_competidores, name = "funcao_list_competidores")
 ]
