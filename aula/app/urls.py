@@ -6,4 +6,5 @@ urlpatterns = [
     path('', index, name="index" ),
     path('admin/', admin.site.urls),
     path('basico/', include("basico.urls", namespace="basico")),
+    path('relacionamentos/', include("relacionamentos.urls", namespace="relacionamentos")),
 ]

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ aluno.nome }}
+{% endblock title %}
+
+{% block content %}
+    <div class="content">
+        <div class="row">
+            <strong>Email:</strong> <p>{{ aluno.email }}</p>
+            <strong>Matrícula:</strong> <p>{{ aluno.cod }}</p>
+        </div>
+        <a class="btn btn-secondary" type="button" href="{% url 'relacionamentos:funcao_aluno_listar' %}">
+            <i class="bi bi-arrow-return-left"></i> 
+        </a>
+    </div>
+{% endblock content %}

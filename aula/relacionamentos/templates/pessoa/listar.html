@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {% if pessoas %}
+        Lista de pessoas:
+    {% else %}
+        Nenhuma Pessoa Cadastrada
+    {% endif %}
+{% endblock title %}
+
+{% block content %}
+    {% if pessoas %}
+        <table class="table table-hover">
+            <thead>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>CPF</th>
+                <th>Ações</th>
+            </thead>
+            <tbody>
+                {% for pessoa in pessoas %}
+                    <tr>
+                        <td>{{ pessoa.id }}</td>
+                        <td>{{ pessoa.nome }}</td>
+                        <td>{{ pessoa.data_nascimento|date:"d/m/Y"}}</td>
+                        <td>{{ pessoa.cpf}}</td>
+                        <td>
+                            <a class="btn btn-secondary" type="button" title="Detalhar usando funções" href="{% url 'relacionamentos:funcao_pessoa_ler' pessoa.id%}">
+                                <i class="bi bi-card-list"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock content %}
