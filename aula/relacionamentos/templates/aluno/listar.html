@@ -9,6 +9,9 @@
 {% endblock title %}
 
 {% block content %}
+    <a class="btn btn-outline-success" role="button">
+        <i class="bi bi-floppy"></i> Novo Aluno
+    </a>
     {% if alunos %}
         <table class="table table-hover">
             <thead>
@@ -26,8 +29,14 @@
                         <td>{{ aluno.email}}</td>
                         <td>{{ aluno.cod}}</td>
                         <td>
-                            <a class="btn btn-secondary" type="button" title="Detalhar usando funções" href="{% url 'relacionamentos:funcao_aluno_ler' aluno.id%}">
+                            <a class="btn btn-outline-secondary btn-lg" type="button" title="Detalhar usando classe" href="{% url 'relacionamentos:classe_aluno_ler' aluno.id%}">
                                 <i class="bi bi-card-list"></i>
+                            </a>
+                            <a class="btn btn-outline-danger btn-lg" role='button' title='Deletar' href="{% url 'relacionamentos:classe_aluno_deletar' aluno.id%}">
+                                <i class="bi bi-trash3"></i>
+                            </a>
+                            <a class="btn btn-outline-info btn-lg" title="Editar usando Funções" >
+                                <i class="bi bi-pencil"></i>
                             </a>
                         </td>
                     </tr>

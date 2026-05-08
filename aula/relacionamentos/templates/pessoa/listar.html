@@ -9,6 +9,11 @@
 {% endblock title %}
 
 {% block content %}
+
+    <a class="btn btn-success" role="button" href="{% url 'relacionamentos:funcao_pessoa_criar'%}">
+        <i class="bi bi-floppy"></i> Nova Pessoa
+    </a>
+
     {% if pessoas %}
         <table class="table table-hover">
             <thead>
@@ -26,8 +31,14 @@
                         <td>{{ pessoa.data_nascimento|date:"d/m/Y"}}</td>
                         <td>{{ pessoa.cpf}}</td>
                         <td>
-                            <a class="btn btn-secondary" type="button" title="Detalhar usando funções" href="{% url 'relacionamentos:funcao_pessoa_ler' pessoa.id%}">
+                            <a class="btn btn-outline-secondary btn-lg" type="button" title="Detalhar usando funções" href="{% url 'relacionamentos:funcao_pessoa_ler' pessoa.id%}">
                                 <i class="bi bi-card-list"></i>
+                            </a>
+                            <a class="btn btn-outline-danger btn-lg" role='button' title='Deletar' href="{% url 'relacionamentos:funcao_pessoa_deletar' pessoa.id %}">
+                                <i class="bi bi-trash3"></i>
+                            </a>
+                            <a class="btn btn-outline-info btn-lg" title="Editar usando Funções" href="{% url 'relacionamentos:funcao_pessoa_editar' pessoa.id%}">
+                                <i class="bi bi-pencil"></i>
                             </a>
                         </td>
                     </tr>

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{aluno.nome}}
+{% endblock title %}    
+
+{% block content %}
+<div class="content">
+    <div>
+        <strong>Matrícula</strong><p>{{aluno.cod}}</p>
+        <strong>Email</strong><p>{{aluno.email}}
+        <div>
+            <h3>Esta ação é irreversível! Tem certeza que desaja deletar os dados acima?</h3>
+        </div>
+        <form  id='aluno' action="{% url 'relacionamentos:classe_aluno_deletar' aluno.id %}" method="post">
+            {% csrf_token %}
+            <input name="aluno_id" type='hidden' id='aluno_id' value="{{ aluno.id }}">
+            <button type="submit" class="btn btn-outline-danger bi bi-trash3"> Sim, deletar</button>
+            <br>
+            <a class="bi bi-arrow" role='button' title='Voltar' href="{% url 'relacionamentos:classe_aluno_listar'%}">
+            Cancelar
+            </a>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
